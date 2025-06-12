@@ -1,15 +1,9 @@
-import './App.css'
-import Produto from './components/Produto.jsx'
-import Carrossel from './components/Carrossel.jsx'
+import MainScreen from './components/MainScreen.jsx'
 
 function App() {
- 
   return (
     <>
-     
-    < Produto />
-    < Carrossel />
-
+      <MainScreen />
     </>
   )
 }
