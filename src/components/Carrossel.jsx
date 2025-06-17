@@ -17,7 +17,7 @@ export default function Carrossel({data, name}) {
         placeItems: 'center',
       }}>
       <Typography component='h1' fontSize='2.5rem' sx={{
-        color: '#fff',
+        color: '#5D1A1A',
         marginBottom: '1.5rem',
       }}>
         {name}
