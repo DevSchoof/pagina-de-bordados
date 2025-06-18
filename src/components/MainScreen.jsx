@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Header from "./Header";
 import Carrossel from "./Carrossel";
 
 
 export default function MainScreen() {
-    const [dados, setDados] = React.useState(null);
+  const [dados, setDados] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
 
@@ -33,7 +33,7 @@ export default function MainScreen() {
   }
 
   const arrayDados = Array.isArray(dados.products) ? dados.products : Object.values(dados.products);
-  console.log(arrayDados) 
+  console.log(arrayDados)
 
   const toalhas = arrayDados.filter(item => item.categoria.toLowerCase() === 'toalhas')
   const necessaires = arrayDados.filter(item => item.categoria.toLowerCase() === 'necessaires')
@@ -44,14 +44,30 @@ export default function MainScreen() {
 
   return (
     <>
-    <Header />
-      <Box sx={{ paddingTop: '80px' }}>
-        {(toalhas.length > 0) && <Carrossel data={toalhas} name='Toalhas'/>}
-        {(necessaires.length > 0) && <Carrossel data={necessaires} name='Necessaires'/>}
-        {(fraldas.length > 0) && <Carrossel data={fraldas} name='Fraldas'/>}
-        {(kits.length > 0) && <Carrossel data={kits} name='Kits'/>}
-        {(uniformes.length > 0) && <Carrossel data={uniformes} name='Uniformes'/>}
-        {(cozinha.length > 0) && <Carrossel data={cozinha} name='Cozinha'/>}
+      <Header />
+      <Box sx={{ paddingTop: '7.5rem' }}>
+        <Box sx={{
+          width: '100vw',
+          paddingTop: '1rem',
+          display: 'grid',
+          placeItems: 'center',
+        }}>
+          <Typography
+            component='h1'
+            color='#5D1A1A'
+            sx={{
+              fontWeight: 600,
+              fontSize: {xs: '1.5rem', sm: '2rem', md: '2.5rem'}
+            }}>
+            Bem vindo à Bordados da Be!
+          </Typography>
+        </Box>
+        {(toalhas.length > 0) && <Carrossel data={toalhas} name='Toalhas' />}
+        {(necessaires.length > 0) && <Carrossel data={necessaires} name='Necessaires' />}
+        {(fraldas.length > 0) && <Carrossel data={fraldas} name='Fraldas' />}
+        {(kits.length > 0) && <Carrossel data={kits} name='Kits' />}
+        {(uniformes.length > 0) && <Carrossel data={uniformes} name='Uniformes' />}
+        {(cozinha.length > 0) && <Carrossel data={cozinha} name='Cozinha' />}
       </Box>
     </>
   );

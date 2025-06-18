@@ -20,7 +20,7 @@ export default function Header() {
                     <img
                         src={logo}
                         alt="Logo"
-                        style={{ height: 120, marginRight: 8, cursor: 'pointer' }}
+                        style={{ height: '7.5rem', marginRight: '0.5rem', cursor: 'pointer' }}
                         onClick={() => window.location.href = '/'}
                     />
                 </Box>
